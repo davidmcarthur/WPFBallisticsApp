@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfBAllisticsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBAllisticsApp"
+        mc:Ignorable="d"
+        Title="Zombie Ballistics Calculator" Height="450" Width="800" Background="#663399">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Source="D:\D_repos\WpfBAllisticsApp\WpfBAllisticsApp\Images\aspectcrosshairs.jpg" Margin="-64,0,-60.4,0" Grid.ColumnSpan="2"></Image>
+        <TextBlock HorizontalAlignment="Left" Margin="60,10,0,0" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center" Text="Input Characteristics" VerticalAlignment="Top" Background="#663399" Height="20" Width="140" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,59.6,0" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center" Text="Output Characteristics" VerticalAlignment="Top" Background="#663399" Height="20" Width="140" Grid.Column="1"/>
+    </Grid>
+</Window>

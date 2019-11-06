@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace WpfBAllisticsApp
 {
@@ -32,81 +33,19 @@ namespace WpfBAllisticsApp
             
         }
 
-        private void TextBox_TempChanged(object sender, TextChangedEventArgs e)
-        {
-            
-                b.TempFarenheit = sender.ToString();
-            
-        }
-
-        private void TextBox_DiameterChanged(object sender, TextChangedEventArgs e)
-        {
-            b.Diameter = sender.ToString();
-        }
-
-
-        private void TextBox_VelocityChanged(object sender, TextChangedEventArgs e)
-        {
-            b.Velocity = sender.ToString();
-        }
-
-        private void TextBox_MassChanged(object sender, TextChangedEventArgs e)
+        // Text box for Velocity
+        // TODO: parse text information from sender remove unused information
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
-        }
-
-        private void TextBox_CoefChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_DistanceChanged(object sender, TextChangedEventArgs e)
-        {
+            b.TempFarenheit = TempTextBox.Text;
 
         }
 
 
-        private void TextBox_FinalVelocityChanged(object sender, TextChangedEventArgs e)
+        private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
-
+            // TODO: Create code to ensure all required blocks are present before executing calculation
         }
-
-        private void TextBox_ImpactTimeChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_DropChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        /**************************************************************************/
-       // WIND ACTIONS
-        private void TextBox_WindValChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_WindPushChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_WindDirectionChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_WindVelocityChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
     }
 }

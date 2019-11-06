@@ -28,15 +28,9 @@
         <TextBlock HorizontalAlignment="Left" Margin="100,300,0,0" TextWrapping="Wrap"  TextAlignment="Center" Text="Target Distance" VerticalAlignment="Top" Background="#01cc00" Height="20" Width="140" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="100,340,0,0" TextWrapping="Wrap"  TextAlignment="Center" Text="Wind Velocity (mph)" VerticalAlignment="Top" Background="#01cc00" Height="20" Width="140" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="100,380,0,0" TextWrapping="Wrap"  TextAlignment="Center" Text="Wind Direction (deg)" VerticalAlignment="Top" Background="#01cc00" Height="20" Width="140" Grid.Column="1"/>
-        <!-- TEXT BOX AREA FOR INPUT-->
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="260,60,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_TempChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="260,100,0,0" TextWrapping="Wrap" Text="2500" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_VelocityChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="260,140,0,0" TextWrapping="Wrap" Text="164" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_MassChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="260,180,0,0" TextWrapping="Wrap" Text=".308" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_DiameterChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="260,220,0,0" TextWrapping="Wrap" Text=".310" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_CoefChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="260,300,0,0" TextWrapping="Wrap" Text="650" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_DistanceChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="260,340,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_WindVelocityChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" Margin="260,380,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_WindDirectionChanged" Background="Red"/>
+        <!--TEXT BOXES FOR INPUT-->
+        <TextBox x:Name="TempTextBox" Grid.ColumnSpan="2" HorizontalAlignment="Right" Height="20" Margin="100,60,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Center" Background="Red" TextChanged="TextBox_TextChanged_1"/>
+
 
         <!-- OUTPUT LABLES-->
         <TextBlock HorizontalAlignment="Right" Margin="0,20,230,0" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center" Text="Output Characteristics" VerticalAlignment="Top" Background="#663399" Height="20" Width="140" Grid.Column="2"/>
@@ -46,13 +40,9 @@
         <TextBlock HorizontalAlignment="Right" Margin="0,180,200,0" TextWrapping="Wrap"  TextAlignment="Center" Text="Wind Value (0-full)" VerticalAlignment="Top" Background="#01cc00" Height="20" Width="140" Grid.Column="2"/>
         <TextBlock HorizontalAlignment="Right" Margin="0,220,200,0" TextWrapping="Wrap"  TextAlignment="Center" Text="Wind Push (inches)" VerticalAlignment="Top" Background="#01cc00" Height="20" Width="140" Grid.Column="2"/>
         <!--OUTPUT TEXT BOXES-->
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Right" Height="20" Margin="0,60,-330,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_ImpactTimeChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Right" Height="20" Margin="0,100,-330,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_FinalVelocityChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Right" Height="20" Margin="0,140,-330,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_DropChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Right" Height="20" Margin="0,180,-330,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_WindValChanged" Background="Red"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Right" Height="20" Margin="0,220,-330,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_WindPushChanged" Background="Red"/>
-
-        <Button Background="Red" FontWeight ="Bold" FontSize="20" Content="Ready? Send It!"  Grid.Column="2" HorizontalAlignment="Left" Margin="163.2,320,0,0" VerticalAlignment="Top" Width="167" Height="40" Click="Button_Click"/>
+        
+        
+        <Button x:Name="Calculate" Background="Red" FontWeight ="Bold" FontSize="20" Content="Ready? Send It!"  Grid.Column="2" HorizontalAlignment="Left" Margin="163.2,320,0,0" VerticalAlignment="Top" Width="167" Height="40" Click="btnCalculate_Click"/>
 
     </Grid>
 </Window>

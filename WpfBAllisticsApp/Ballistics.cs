@@ -41,8 +41,10 @@ namespace WpfBAllisticsApp
         // Wind
         public string WindDirection { get; set; }
         public string WindVelocityMPH { get; set; }
-        public double WindValue { get; set; }
+        public string WindValue { get; set; }
         public double DistanceZ = 0;
+        public string WindPush { get; set; }
+
 
         // default constructor
         public Ballistics() { }
@@ -72,7 +74,7 @@ namespace WpfBAllisticsApp
         // TODO implement the MOA, MIL drop and wind
 
         //  Ballisitics WIND
-        public void EstimateWind()
+        public string EstimateWind()
         {
             int direction = Convert.ToInt32(WindDirection);
             // convert wind in MPH to meters/second 0.44704
@@ -111,9 +113,10 @@ namespace WpfBAllisticsApp
             // conver from meters to inches
             DistanceZ = Math.Round((DistanceZ * 39.3701),2);
             // limit to 2 decimal spots
-            
 
-            WindValue = windValue;
+            WindPush = Convert.ToString(DistanceZ);
+            WindValue = Convert.ToString(windValue);
+            return WindValue;
         }
 
         public void DoBallisticsMath()

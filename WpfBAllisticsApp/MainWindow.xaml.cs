@@ -33,19 +33,100 @@ namespace WpfBAllisticsApp
             
         }
 
-        // Text box for Velocity
-        // TODO: parse text information from sender remove unused information
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        #region TEXTBOXES
+        private void Temperature_TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+        }
+        
+        private void Velocity_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        }
 
-            b.TempFarenheit = TempTextBox.Text;
+        private void WindDirection_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
 
+        private void TargetDist_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void WindVelocity_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void BallCoef_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Diameter_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Mass_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ImpactTime_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void FinalVelocity_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void BulletDrop_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void WindValue_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void WindPush_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        #endregion
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Create code to ensure all required blocks are present before executing calculation
+            // Create code to ensure all required blocks are present before executing calculation
+            b.Velocity = VelocityTextBox.Text;
+            b.Mass = MassTextBox.Text;
+            b.Diameter = DiameterTextBox.Text;
+            b.Distance = TargetDistTextBox.Text;
+            b.TempFarenheit = TemperatureTextBox.Text;
+            b.DragCoef = BallCoefTextBox.Text;
+            b.WindVelocityMPH = WindVelocityTextBox.Text;
+            b.WindDirection = WindDirectionTextBox.Text;
+            // input variables complete
+
+            // Call constructor and collect data from index page
+            b.SetBallistics(b.Velocity, b.Mass,
+                b.Diameter, b.Distance, b.TempFarenheit,
+                b.DragCoef, b.WindDirection, b.WindVelocityMPH);
+
+            b.CalculatePressure(b.TempCelcius);
+            b.DoBallisticsMath();
+            // ballistics math must run first
+            b.EstimateWind();
+
+            ImpactTimeTextBox.Text = b.ImpactTime;
+            FinalVelocityTextBox.Text = b.FinalVelocity;
+            BulletDropTextBox.Text = b.BulletDrop;
+            WindValueTextBox.Text = b.WindValue;
+            WindPushTextBox.Text = b.WindPush;
+
         }
     }
 }
